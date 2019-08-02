@@ -1,12 +1,19 @@
 Package: appwithdash
 Title: An app with DashR and golem
 Version: 0.0.0.9000
-Authors@R: person('Sébastien', 'Rochette', email = 'sebastien@thinkr.fr', role = c('cre', 'aut'))
+Authors@R: 
+    person(given = "Sébastien",
+           family = "Rochette",
+           role = c("cre", "aut"),
+           email = "sebastien@thinkr.fr")
 Description: Test golem with a Dash application.
 License: MIT + file LICENSE
+Imports: 
+    dash,
+    dashCoreComponents,
+    dashHtmlComponents,
+    golem,
+    shiny
 Encoding: UTF-8
 LazyData: true
-Imports: 
-    shiny, 
-    golem
-RoxygenNote: 6.1.0
+RoxygenNote: 6.1.1

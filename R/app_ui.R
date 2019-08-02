@@ -1,16 +1,32 @@
-#' @import shiny
 app_ui <- function() {
-  tagList(
-    # Leave this function for adding external resources
-    golem_add_external_resources(),
-    # List the first level UI elements here 
-    fluidPage(
-      h1("appwithdash")
+  htmlDiv(
+    list(
+      htmlH1('Hello Dash'),
+      htmlDiv(children = "Dash: A web application framework for R inside a golem."),
+      dccGraph(
+        figure=list(
+          data=list(
+            list(
+              x=list(1, 2, 3),
+              y=list(4, 1, 2),
+              type='bar',
+              name='SF'
+            ),
+            list(
+              x=list(1, 2, 3),
+              y=list(2, 4, 5),
+              type='bar',
+              name='Montr\U{00E9}al'
+            )
+          ),
+          layout = list(title='Dash Data Visualization')
+        )
+      )
     )
   )
 }
 
-#' @import shiny
+#' @importFrom shiny addResourcePath tags
 golem_add_external_resources <- function(){
   
   addResourcePath(

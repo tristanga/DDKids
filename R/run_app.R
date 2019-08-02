@@ -1,11 +1,23 @@
 #' Run the Shiny Application
 #'
+#' @param ... not used
+#'
 #' @export
-#' @importFrom shiny shinyApp
-#' @importFrom golem with_golem_options
+#' @importFrom dash Dash
+#' @import dash
+#' @import dashCoreComponents
+#' @import dashHtmlComponents
 run_app <- function(...) {
-  with_golem_options(
-    app = shinyApp(ui = app_ui, server = app_server), 
-    golem_opts = list(...)
-  )
+  library(dash)
+  library(dashCoreComponents)
+  library(dashHtmlComponents)
+  
+  app <- Dash$new()
+  
+  app$layout(app_ui())
+  # with_golem_options(
+  #   app = shinyApp(ui = app_ui, server = app_server), 
+  #   golem_opts = list(...)
+  # )
+  app$run_server(host = "0.0.0.0", port = 8050, block = TRUE, showcase = FALSE)
 }
