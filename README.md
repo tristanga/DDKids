@@ -1,39 +1,34 @@
----
-output: github_document
----
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-```{r, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  fig.path = "man/figures/README-",
-  out.width = "100%"
-)
-```
 # appwithdash
 
 <!-- badges: start -->
-[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+
+[![Lifecycle:
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 <!-- badges: end -->
 
-The goal of {appwithdash} is to test in which conditions {golem} can be used with Dash.
+The goal of {appwithdash} is to test in which conditions {golem} can be
+used with Dash.
 
 ## Installation
 
 You can install the released version of appwithdash from GitHub with:
 
-```r
+``` r
 remotes::install_github("ThinkR-open/appwithdash")
 ```
 
 ## Use {golem} with {Dash}
 
-- Create a golem: `golem::create_golem(path = "appwithdash")`
-- Remove all calls to `@import shiny`
-- Modify run_app:
-```{r, eval=FALSE}
+  - Create a golem: `golem::create_golem(path = "appwithdash")`
+  - Remove all calls to `@import shiny`
+  - Modify run\_app:
+
+<!-- end list -->
+
+``` r
 run_app <- function() {
   # Packages need to be loaded for Dash to work
   # import is not enough. 
@@ -50,14 +45,15 @@ run_app <- function() {
   app$run_server(host = "0.0.0.0", port = 8050, block = TRUE, showcase = FALSE)
 }
 ```
-- Fill app_ui
-- Document: `attachment::att_to_description()`
-- Reload: `golem::document_and_reload()`
-- Run the app: `appwithdash::run_app()`
+
+  - Fill app\_ui
+  - Document: `attachment::att_to_description()`
+  - Reload: `golem::document_and_reload()`
+  - Run the app: `appwithdash::run_app()`
 
 ## Deploy inside a Docker
 
-```{r, eval=FALSE}
+``` r
 # Build package inside and hide ----
 devtools::build(path = ".")
 usethis::use_build_ignore(".*\.tar\.gz$", escape = FALSE)
@@ -86,8 +82,6 @@ system("docker kill app")
 system("docker rm app")
 ```
 
-
-   
-Please note that the 'appwithdash' project is released with a
-[Contributor Code of Conduct](CODE_OF_CONDUCT.md).
-By contributing to this project, you agree to abide by its terms.
+Please note that the ‘appwithdash’ project is released with a
+[Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to
+this project, you agree to abide by its terms.
