@@ -10,7 +10,9 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 <!-- badges: end -->
 
 The goal of {appwithdash} is to test in which conditions {golem} can be
-used with Dash.
+used with Dash.  
+This comes with a blog article on ThinkR website: [Dash with golem: The
+beginning](http://rtask.thinkr.fr/dash-with-golem-the-beginning)
 
 ## Installation
 
