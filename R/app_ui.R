@@ -1,7 +1,7 @@
 app_ui <- function() {
   htmlDiv(
     list(
-      htmlH1('Hello Dash'),
+      htmlH1('Test'),
       htmlDiv(children = "Dash: A web application framework for R inside a golem."),
       dccGraph(
         figure=list(
