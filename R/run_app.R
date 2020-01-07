@@ -11,6 +11,7 @@ run_app <- function(...) {
   library(dash)
   library(dashCoreComponents)
   library(dashHtmlComponents)
+  library(sf)
   
   app <- Dash$new()
   
