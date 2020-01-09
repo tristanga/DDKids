@@ -70,5 +70,19 @@ run_app <- function(...) {
   #   app = shinyApp(ui = app_ui, server = app_server), 
   #   golem_opts = list(...)
   # )
+  
+  app$callback(
+    output("map", "figure"),
+    list(
+      input("state-dropdown", "value"),
+      input("stdmode-dropdown", "value"),
+      input("index-dropdown", "value"),
+      input("year-dropdown", "value")
+    ),
+    function(state, stdmode, index, year){
+      create_mapbox_plot(state, stdmode, index, year)
+    }
+  )
+  
   app$run_server(host = "0.0.0.0", port = 8050, block = TRUE, showcase = FALSE)
 }
