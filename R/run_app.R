@@ -32,6 +32,36 @@ run_app <- function(...) {
 
   sequential_colorscale <- c("#013457", "#045781", "#2E74B5", "#52C1FA", "#B5E5FD")
 
+  create_mapbox_plot <- function(state, stdmode, index, year){
+    d <- merged[merged$StateName == state & merged$StdMode == stdmode & merged$IndexName == index & merged$Year == year, ] %>%
+      ms_simplify()
+    plot_mapbox(
+      d,
+      color = ~as.factor(coi_num),
+      colors = rev(sequential_colorscale),
+      text = ~coi_lbl,
+      customdata = ~GEOID10,
+      hovertemplate = paste(
+        paste(index, "COI: %{text}<br>"),
+        "GEOID: %{customdata}",
+        "<extra></extra>"
+      )
+    ) %>%
+      layout(
+        height = 700,
+        mapbox = list(
+          accesstoken = mapbox_token,
+          zoom = 5,
+          style = "light"
+        ),
+        hoverdistance = 200
+      )
+  }
+
+  state = "Vermont"
+  stdmode = "National"
+  index = "Overall"
+  year = 2010
   
   app <- Dash$new()
   
