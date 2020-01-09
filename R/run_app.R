@@ -12,7 +12,9 @@ run_app <- function(...) {
   library(dashCoreComponents)
   library(dashHtmlComponents)
   library(sf)
+  library(data.table)
   
+  map_data <- fread("../data/DataForMaps.csv", colClasses = c(GEOID10 = "character"))
   app <- Dash$new()
   
   app$layout(app_ui())
