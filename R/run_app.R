@@ -14,7 +14,7 @@ run_app <- function(...) {
   library(sf)
   library(data.table)
   
-  map_data <- fread("../data/DataForMaps.csv", colClasses = c(GEOID10 = "character"))
+  map_data <- fread("/usr/local/data/DataForMaps.csv", colClasses = c(GEOID10 = "character"))
   app <- Dash$new()
   
   app$layout(app_ui())
