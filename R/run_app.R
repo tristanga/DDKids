@@ -65,11 +65,74 @@ run_app <- function(...) {
   
   app <- Dash$new()
   
-  app$layout(app_ui())
-  # with_golem_options(
-  #   app = shinyApp(ui = app_ui, server = app_server), 
-  #   golem_opts = list(...)
-  # )
+  app$layout(
+    htmlDiv(
+      children = list(
+        htmlDiv(
+          dccLoading(
+            children = dccGraph(
+              id = "map"
+            )
+          ),
+          style = list(width = "75vw")
+        ),
+        htmlDiv(
+          children = list(
+            htmlSpan(
+              paste("Select", "State"),
+              className = "control-label"
+            ),
+            dccDropdown(
+              id = "state-dropdown",
+              options = lapply(
+                unique(merged$StateName),
+                function(x){list(label = x, value = x)}
+              ),
+              value = "Vermont"
+            ),
+            htmlSpan(
+              paste("Select", "Standardization Mode"),
+              className = "control-label"
+            ),
+            dccDropdown(
+              id = "stdmode-dropdown",
+              options = lapply(
+                unique(merged$StdMode),
+                function(x){list(label = x, value = x)}
+              ),
+              value = "National"
+            ),
+            htmlSpan(
+              paste("Select", "index"),
+              className = "control-label"
+            ),
+            dccDropdown(
+              id = "index-dropdown",
+              options = lapply(
+                unique(merged$IndexName),
+                function(x){list(label = x, value = x)}
+              ),
+              value = "Education"
+            ),
+            htmlSpan(
+              paste("Select", "year"),
+              className = "control-label"
+            ),
+            dccDropdown(
+              id = "year-dropdown",
+              options = lapply(
+                unique(merged$Year),
+                function(x){list(label = x, value = x)}
+              ),
+              value = 2010
+            )
+          ),
+          style = list(width = "20vw")
+        )
+      ),
+      style = list(display = "flex")
+    )
+  )
   
   app$callback(
     output("map", "figure"),
