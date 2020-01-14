@@ -183,26 +183,5 @@ run_app <- function(...) {
     }
   )
   
-  # hide/show modal
-  app$callback(
-    output("modal", "style"),
-    list(input("instructions-button", "n_clicks")),
-    function(n){
-      if (n > 0){
-        return(list(display = "block"))
-      }
-      return(list(display = "none"))
-    }
-  )
-  
-  # Close modal by resetting info_button click to 0
-  app$callback(
-    output("instructions-button", "n_clicks"),
-    list(input("modal-close-button", "n_clicks")),
-    function(n){
-      return(0)
-    }
-  )
-  
   app$run_server(host = "0.0.0.0", port = 8050, block = TRUE, showcase = FALSE)
 }
