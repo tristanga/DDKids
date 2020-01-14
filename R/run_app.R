@@ -158,7 +158,7 @@ run_app <- function(...) {
       ),
       style = list(display = "flex")
     ),
-    htmlImg(src = "assets/ddkids_Logo.png", width=300, style = list(paddingLeft = "25px"))
+    htmlImg(src = "/usr/local/assets/ddkids_Logo.png", width=300, style = list(paddingLeft = "25px"))
   )
   
   app$callback(
