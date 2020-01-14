@@ -1,3 +1,13 @@
+#' Run the Shiny Application
+#'
+#' @param ... not used
+#'
+#' @export
+#' @importFrom dash Dash
+#' @import dash
+#' @import dashCoreComponents
+#' @import dashHtmlComponents
+
 run_app <- function(...) {
   library(dash)
   library(data.table)
