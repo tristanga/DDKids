@@ -81,7 +81,7 @@ run_app <- function(...) {
   }
   
   
-  app <- Dash$new(external_stylesheets = "https://raw.githubusercontent.com/tristanga/DDKids/master/R/assets/template_style.css")
+  app <- Dash$new()
   
   app$layout(
     htmlDiv(
