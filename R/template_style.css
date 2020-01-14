@@ -1,0 +1,70 @@
+body {
+  font-family: Arial;
+}
+
+.control-label, .Select-control {
+  font-size: 7pt;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+  color: #58595b;
+}
+
+#controls {
+  transform: translateX(-150px);
+  position: relative;
+  min-width: 150px;
+}
+
+.Select.is-open {
+  font-size: 7pt;
+}
+
+.chart-title {
+  width: 60%;
+  font-size: 15pt !important;
+  overflow-wrap: break-word !important;
+  padding: 2% 0 0 5%;
+}
+
+.modebar-container {
+  top: unset !important;
+  bottom: 0px;
+}
+
+
+.modal {
+    position: fixed; 
+    z-index: 1002; /* Sit on top, including modebar which has z=1001 */
+    left: 25%;
+    top: 25%;
+    width: 50%;
+    height: 50%;
+    background-color: white;
+    /*border: 1px solid black;*/
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,.4);
+    overflow-y: scroll;
+    color: #595959;
+}
+
+.modal-content {
+    padding: 0 40px;
+    background-color: white;
+}
+
+#modal-close-button{
+  font-size: 40px;
+  float: right;
+  cursor: pointer;
+  position: fixed;
+}
+
+#modal-close-button:hover{
+  color: #f27474;
+}
+
+.modal-close-outer{
+  float: right;
+  margin-right: 35px;
+}
+
