@@ -9,13 +9,15 @@
 #' @import dashHtmlComponents
 
 run_app <- function(...) {
-  library(dash)
-  library(data.table)
-  library(sf)
-  library(plotly)
-  library(dashHtmlComponents)
-  library(dashCoreComponents)
-  library(rmapshaper)
+   library(dash)
+   library(dashCoreComponents)
+   library(dashHtmlComponents)
+   library(sf)
+   library(data.table)
+   library(plotly)
+   library(dashHtmlComponents)
+   library(dashCoreComponents)
+   library(rmapshaper)
   
   map_data <- fread("/usr/local/data/DataForMaps.csv", colClasses = c(GEOID10 = "character"))
   mapbox_token = "pk.eyJ1IjoicGxvdGx5bWFwYm94IiwiYSI6ImNqdnBvNDMyaTAxYzkzeW5ubWdpZ2VjbmMifQ.TXcBE-xg9BFdV2ocecc_7g"
