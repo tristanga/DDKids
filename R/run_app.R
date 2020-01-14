@@ -81,7 +81,7 @@ run_app <- function(...) {
   }
   
   
-  app <- Dash$new()
+  app <- Dash$new(external_stylesheets = "https://raw.githubusercontent.com/tristanga/DDKids/master/R/assets/template_style.css")
   
   app$layout(
     htmlDiv(
@@ -162,7 +162,7 @@ run_app <- function(...) {
       ),
       style = list(display = "flex")
     ),
-    htmlImg(src = "/usr/local/assets/ddkids_Logo.png", width=300, style = list(paddingLeft = "25px"))
+    htmlImg(src = "https://github.com/tristanga/DDKids/raw/master/R/assets/ddkids_Logo.png", width=300, style = list(paddingLeft = "25px"))
   )
   
   app$callback(
