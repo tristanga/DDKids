@@ -9,6 +9,7 @@ run_app <- function(...) {
   
   map_data <- fread("/usr/local/data/DataForMaps.csv", colClasses = c(GEOID10 = "character"))
   mapbox_token = "pk.eyJ1IjoicGxvdGx5bWFwYm94IiwiYSI6ImNqdnBvNDMyaTAxYzkzeW5ubWdpZ2VjbmMifQ.TXcBE-xg9BFdV2ocecc_7g"
+  Sys.setenv('MAPBOX_TOKEN' = mapbox_token)
   
   help_text <- dccMarkdown(
     "This map shows the nationally normed, overall Child
